@@ -10,11 +10,15 @@ function loadData() {
     }).done(function (res) {
         var data = res;
         $.each(data, function (index, item) {
+            var propertyName = "Birthday";
+            item.propertyName
+            var dateOfBirth = item["DateOfBirth"];
+            dateOfBirth = formatData(dateOfBirth);
             var tr = $(`<tr>
                             <td><div><span>`+ item['EmployeeCode'] +`</span></div></td>
                             <td><div><span>`+ item['FullName'] +`</span></div></td>
-                            <td><div><span>`+ item['GenderName'] +`</span></div></td>
-                            <td><div><span>`+ item['DateOfBirth'] +`</span></div></td>
+                            <td><div><span>`+ item['GenderName'] + `</span></div></td>
+                            <td><div><span>`+ dateOfBirth +`</span></div></td>
                             <td><div><span>`+ item['PhoneNumber'] +`</span></div></td>
                             <td><div><span>`+ item['Email'] +`</span></div></td>
                             <td><div><span>`+ item['PositionName'] +`</span></div></td>
@@ -30,4 +34,19 @@ function loadData() {
 
     })
     //binding du lieu len table
+}
+
+
+function formatData(date) {
+    var date = new Date(date);
+    if (Number.isNaN(date.getTime())) {
+        return "";
+    }
+    else {
+        var day = date.getDate(),
+            month = date.getMonth() + 1,
+            year = date.getFullYear();
+
+        return day + '/' + month + '/' + year;
+    }
 }
