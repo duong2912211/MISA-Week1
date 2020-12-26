@@ -1,4 +1,4 @@
-﻿/*grid*/
+/*grid*/
 .grid{
     width:100%;
     height: calc(100% - 153px);
@@ -11,22 +11,29 @@
 }
 
 table {
-    width: 100%
+    width: 100%;
 }
 
 table th,td{
-    border-bottom:1px solid #bbbbbb;
-    padding-left:16px;
-    padding-right:16px;
-    padding:10px 16px;
-    text-align:left;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-   
+border-bottom:1px solid #bbbbbb;
+padding-left:16px;
+padding-right:16px;
+padding:10px 16px;
+text-align:left;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
 }
 table th{
     position:sticky;
     top:0px;
     background:#fff;
 }
+    table td {
+        max-width: 150px;
+    }
+    table tr td div{
+        text-overflow:ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+    }
